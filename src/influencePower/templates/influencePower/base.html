@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	{% load static %}
+	{% block add_style %}{% endblock %}
+	<link rel="stylesheet" type="text/css" href="{% static 'influencePower/base.css' %}" />
+	<title>{% block title %}{% endblock %}</title>
+</head>
+
+<body class=" app-projectManager model-plan change-list"data-admin-utc-offset="0">
+	<tr>
+		<a href='/influencePower/normalusers/'>normalusers</a>
+		<a href='/influencePower/influencers/'>influencers</a>
+	</tr>
+	<!-- Content -->
+	{% block content %}{% endblock %}
+	<!-- END Content -->
+	<div id="footer">
+		{% block footer %}
+		{% endblock %}
+	</div>
+</body>
+</html>

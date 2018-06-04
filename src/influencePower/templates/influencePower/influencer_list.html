@@ -1,0 +1,29 @@
+{% extends "influencePower/base.html" %}
+
+{% load static %}
+{% block cssfile %}{% endblock %}
+
+{% block title %}Influencers{% endblock %}
+
+{% block content %}
+	{% if influencer_list %}
+		<table>
+			<tr>
+				<th>User Name</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+			</tr>
+			{% for influencer in influencer_list %}
+			<tr>
+				<td><a href={% url 'influencer_detail' influencer.id %}>{{ influencer.username }}</a></td>
+				<td>{{ influencer.first_name }}</td>
+				<td>{{ influencer.last_name }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	{% else %}
+    	<p>No influencers are registered yet.</p>
+	{% endif %}
+{% endblock %}
+
+{% block footer %}{% endblock %}

@@ -1,0 +1,29 @@
+{% extends "influencePower/base.html" %}
+
+{% load static %}
+{% block cssfile %}{% endblock %}
+
+{% block title %}Normal Users{% endblock %}
+
+{% block content %}
+	{% if normaluser_list %}
+		<table>
+			<tr>
+				<th>User Name</th>
+				<th>First Name</th>
+				<th>Last Name</th>
+			</tr>
+			{% for normaluser in normaluser_list %}
+			<tr>
+				<td><a href={% url 'normaluser_detail' normaluser.id %}>{{ normaluser.username }}</a></td>
+				<td>{{ normaluser.first_name }}</td>
+				<td>{{ normaluser.last_name }}</td>
+			</tr>
+			{% endfor %}
+		</table>
+	{% else %}
+    	<p>No normalusers are registered yet.</p>
+	{% endif %}
+{% endblock %}
+
+{% block footer %}{% endblock %}

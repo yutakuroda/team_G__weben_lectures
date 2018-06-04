@@ -1,0 +1,13 @@
+{% extends "influencePower/base.html" %}
+
+{% load static %}
+{% block cssfile %}{% endblock %}
+
+{% block title %}Normal User{% endblock %}
+
+{% block content %}
+	<h1>{{ normaluser.username }}</h1>
+	{{ normaluser.first_name }} {{ normaluser.last_name }}</br>
+{% endblock %}
+
+{% block footer %}{% endblock %}

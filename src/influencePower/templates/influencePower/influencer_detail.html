@@ -1,0 +1,22 @@
+{% extends "influencePower/base.html" %}
+
+{% load static %}
+{% block cssfile %}{% endblock %}
+
+{% block title %}Influencer{% endblock %}
+
+{% block content %}
+	<h1>{{ influencer.username }}</h1>
+	{{ influencer.first_name }} {{ influencer.last_name }}</br>
+	影響力:{{ influencer.influence_power }}</br>
+	
+	<a href={% url 'comment_create' influencer.pk %}>comment</a></br>
+	{% for comment in influencer.comment_set.all %}
+		<div>
+			name: {{ comment.name }}</br>
+			text: {{ comment.text }}</br>
+		</div>
+	{% endfor %}
+{% endblock %}
+
+{% block footer %}{% endblock %}
